@@ -1,0 +1,198 @@
+﻿﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="My Play Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- bootstrap -->
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+    <!-- //bootstrap -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' media="all" />
+    <link href="css/ak-media-upload.css" rel='stylesheet' type='text/css' media="all" />
+    <!--start-smoth-scrolling-->
+    <!-- fonts -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <!-- //fonts -->
+    <!--protal-->
+    <!--<script type="text/javascript" src="../Scripts/knockout-2.2.0.js"></script>
+    <script type="text/javascript" src="../Scripts/knockout-2.2.0.debug.js"></script>
+    <script type="text/javascript" src="js/Akmii.js"></script>
+    <script type="text/javascript" src="js/portal/model/portalmodel.js"></script>
+    <script type="text/javascript" src="js/portal/manager/portalmanager.js"></script>
+    <script type="text/javascript" src="js/portal/portal-upload.js"></script>-->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <!--<script type="text/javascript" src="../Scripts/jquery-1.8.2.min.js"></script>-->
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.8.24.min.js"></script>
+    <!--<script type="text/javascript" src="../Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validate.unobtrusive.js"></script>-->
+    <script type="text/javascript" src="../Scripts/media-player.js"></script>
+    <script type="text/javascript" src="../Scripts/media-upload.js"></script>
+    <script type="text/javascript" src="../Scripts/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" src="../Scripts/playerframework.min.js"></script>
+
+    <!--<link href="../Content/Site.css" rel='stylesheet' type='text/css' />-->
+    <link href="../Content/playerframework.min.css" rel='stylesheet' type='text/css' />
+    <link href="../Content/themes/base/jquery-ui.css" rel='stylesheet' type='text/css' />
+    <link href="../Content/themes/base/jquery.ui.progressbar.css" rel='stylesheet' type='text/css' />
+    <!-- //protal-->
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Alternate Text" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="top-search">
+                    <form class="navbar-form navbar-right">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <input type="submit" value=" ">
+                    </form>
+                </div>
+                <div class="header-top-right">
+                    <div class="file">
+                        <a href="upload.html">Upload</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </nav>
+    <!-- upload -->
+    <div id="content" class="upload">
+        <!-- container -->
+        <div class="container">
+            <div class="upload-right">
+                <from class="form-horizontal">
+                    <!-- 绑定隐藏值 -->
+                    <input type="hidden" id="assetId" />
+
+                    <div class="form-group ak-from-row">
+                        <div class="col-sm-12">
+                            <h1>Upload New Video</h1>
+                        </div>
+                    </div>
+
+                    <div class="form-group ak-from-row">
+                        <div class="col-sm-12">
+                            <input type="file" id="selectFile" class="ak-upload-input upload-media" />
+                            <button class="btn btn-default ak-from-upload-button">Select Video</button>
+                            <button id="fileUpload" type="button" class="btn btn-info" name="fileUpload">Upload</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group ak-from-row">
+                        <div class="col-sm-12">
+                            <h6 id="fromFileName">Select Video Name：</h6>
+                        </div>
+                        <!--<div class="col-sm-12">
+                            <div id="progressBar" style="height: 20px;"></div>
+                        </div>-->
+                        <div class="col-sm-12">
+                            <div class="progress">
+                                <div id="barProgress" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span id="barProgressLable">40% Complete (success)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 上传视频下标提示 -->
+                    <!--<div class="form-group ak-from-row">
+                        <label id="statusMessage"></label>
+                    </div>-->
+
+
+                    <div id="detailsPanel">
+                        <div class="row col-sm-6">
+                            <div class="form-group ak-from-row">
+                                <label class="col-sm-2 control-label ak-from-label">Cover</label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="selectCover" class="form-control ak-upload-input">
+                                    <button class="btn btn-default form-control ak-upload-cover">Select</button>
+                                </div>
+                            </div>
+                            <div class="form-group ak-from-row">
+                                <label class="col-sm-2 control-label ak-from-label">Title</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="fromTitle" placeholder="Title">
+                                </div>
+                            </div>
+                            <div class="form-group ak-from-row">
+                                <label class="col-sm-2 control-label ak-from-label">Category</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="fromCategory">
+                                        <option value="sport">Sport</option>
+                                        <option value="news">News</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group ak-from-row">
+                                <label class="col-sm-2 control-label ak-from-label">Content</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" rows="6" id="fromContent" placeholder="Content"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group ak-from-row">
+                                <label class="col-sm-2 control-label ak-from-label sr-only"></label>
+                                <div class="col-sm-10">
+                                    <button class="btn btn-info btn-lg" id="saveDetails">Publish Video</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-sm-6">
+                            <div class="form-group ak-from-row">
+                                <!--<label class="col-sm-12 control-label ak-from-label sr-only">Cover Preview</label>-->
+                                <div class="col-sm-12" id="preview">
+                                    <img id="fromCover" class="img-thumbnail img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </from>
+                <!-- Video播放区域 -->
+                <div id="videoDisplayPane"></div>
+
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //upload -->
+    <!-- footer -->
+    <!-- //footer -->
+    <div class="clearfix"> </div>
+    <div class="drop-menu">
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
+            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
+        </ul>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    var model = new Akmii.Media.PortalUpload_VM();
+        //    ko.applyBindings(model, $("#content")[0]);
+        //});
+    </script>
+</body>
+</html>
